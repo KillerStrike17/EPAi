@@ -74,6 +74,10 @@ If the ```sides``` is less than 3 or greater than 6 and if the length is less th
 
 Otherwise, the area is calcualte with the formulae:
 
+<center><a href="https://www.codecogs.com/eqnedit.php?latex=\frac{sides&space;\times&space;(length&space;^2)}{4&space;\times&space;tan(&space;\frac{\pi}{sides})}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{sides&space;\times&space;(length&space;^2)}{4&space;\times&space;tan(&space;\frac{\pi}{sides})}" title="\frac{sides \times (length ^2)}{4 \times tan( \frac{\pi}{sides})}" /></a>
+</center>
+
+
 and then the area is returned. 
 
 
@@ -85,7 +89,15 @@ This function has the task to convert temperature in Celcius to Fahrenheit and v
 It checks if the given temperature is below absolute zero (as there cannot be any temperature below that) i.e. **-273.15** in celcius and **-459.67** in Fahrenheit, it raises a ```ValueError```. 
 Otherwise if the temperature is in fahrenheit, 
 
+<center>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;CelciusTemp&space;=&space;\frac{(temperature&space;-&space;32)\times&space;5}{9}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;CelciusTemp&space;=&space;\frac{(temperature&space;-&space;32)\times&space;5}{9}" title="\large CelciusTemp = \frac{(temperature - 32)\times 5}{9}" /></a>
+</center>
+
 formula is used to convert it to celcius and if the temperature is in celcius then 
+
+<center>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;FahrenheitTemp&space;=&space;\frac{temperature&space;\times&space;9}{5}&space;&plus;&space;32" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;FahrenheitTemp&space;=&space;\frac{temperature&space;\times&space;9}{5}&space;&plus;&space;32" title="\large FahrenheitTemp = \frac{temperature \times 9}{5} + 32" /></a>
+</center>
 
 formula is used to convert it to fahrenheit.
 Then the converted temperature is returned back.
@@ -121,12 +133,12 @@ Here are the 49 testcases which I ran to test the functions
 
 |Sr No.| TestCase Name | Testcase Description |
 |---| --- | --- |
-| 1 | test_function_names | This test is check whe|
-| 2 | test_readme_exists | This test is check whe|
-| 3 | test_readme_contents | This test is check whe|
-| 4 | test_readme_proper_description | This test is check whe|
-| 5 | test_readme_file_for_formatting | This test is check whe|
-| 6 | test_indentations | This test is check whe|
+| 1 | test_function_names | This test is check that the function names follow python guidelines|
+| 2 | test_readme_exists | This test is whether readme exists or not|
+| 3 | test_readme_contents | This test is check whether the readme has proper content or not|
+| 4 | test_readme_proper_description | This test is check whether the readme has proper description or not|
+| 5 | test_readme_file_for_formatting | This test is check the file formatting, i.e. sufficientt headings is given or not|
+| 6 | test_indentations | This test is check w|
 | 7 | test_print | This test is check whether the myprint function words the way it is designed to work, i.e. it prints the statement in the format user asked it to do.|
 | 8 | test_create_list_end_gt_start | This test case is to check ```create_list``` function when the ```end``` value is more than the ```start``` value, the function should create the list and return it. |
 | 9 | test_create_list_end_lt_start |This test case is to check ```create_list``` function when the ```end``` value is less than the ```start``` value, the function should raise a value error.|
@@ -141,38 +153,38 @@ Here are the 49 testcases which I ran to test the functions
 | 18 | test_polygon_area_for_length_zero |This test is check the ```polygon_area function``` over zero ```length```, the funciton should give area as 0|
 | 19 | test_polygon_area_for_sides_lt_3 | This test is check the ```polygon_area function``` over ```sides``` less than 3, the funciton should raise ```ValueError``` |
 | 20 | test_polygon_area_for_sides_gt_7 | This test is check the ```polygon_area function``` over ```sides``` greater than 7, the funciton should raise ```ValueError```|
-| 21 | test_polygon_area_for_3_sides | This test is check the ```polygon_area function``` over area of regular triangle, the funciton should return area which should match with the formula |
-| 22 | test_polygon_area_for_4_sides | This test is check the ```polygon_area function``` over area of regular quadrilateral, the funciton should return area which should match with the formula |
-| 23 | test_polygon_area_for_5_sides | This test is check the ```polygon_area function``` overarea of regular pentagon, the funciton should return area which should match with the formula |
-| 24 | test_polygon_area_for_6_sides | This test is check the ```polygon_area function``` overarea of regular Hexagon, the funciton should return area which should match with the formula |
+| 21 | test_polygon_area_for_3_sides | This test is check the ```polygon_area function``` over area of regular triangle, the funciton should return area which should match with the formula <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\frac{\sqrt{3}\times&space;length^2}{4}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;\frac{\sqrt{3}\times&space;length^2}{4}" title="\large \frac{\sqrt{3}\times length^2}{4}" /></a> |
+| 22 | test_polygon_area_for_4_sides | This test is check the ```polygon_area function``` over area of regular quadrilateral, the funciton should return area which should match with the formula <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;length^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;length^2" title="\large length^2" /></a> |
+| 23 | test_polygon_area_for_5_sides | This test is check the ```polygon_area function``` overarea of regular pentagon, the funciton should return area which should match with the formula <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;0.25&space;\times&space;\sqrt{5&space;\times&space;(5&plus;2&space;\times&space;\sqrt{5})}&space;\times&space;length^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;0.25&space;\times&space;\sqrt{5&space;\times&space;(5&plus;2&space;\times&space;\sqrt{5})}&space;\times&space;length^2" title="\large 0.25 \times \sqrt{5 \times (5+2 \times \sqrt{5})} \times length^2" /></a> |
+| 24 | test_polygon_area_for_6_sides | This test is check the ```polygon_area function``` overarea of regular Hexagon, the funciton should return area which should match with the formula <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;(0.5&space;\times&space;(3\times&space;\sqrt{3})length^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;(0.5&space;\times&space;(3\times&space;\sqrt{3})length^2" title="\large (0.5 \times (3\times \sqrt{3})length^2" /></a>|
 | 25 | test_temp_converter_lt_absolute_zero_for_f | This test is to check the ```temp_converter``` function over value below absolute zero in Fahrenheit, which is **-459.67 F**, it should raise a ```ValueError```|
 | 26 | test_temp_converter_lt_absolute_zero_for_c | This test is to check the ```temp_converter``` function over value below absolute zero in Celcius, which is **-273.15 C**, it should raise a ```ValueError```|
-| 27 | test_temp_converter_f_to_c | This test is to check the ```temp_converter``` function over temperature conversion from fahrenheit to celcius, the result should match from the one generated from this formuala |
-| 28 | test_temp_converter_c_to_f | This test is to check the ```temp_converter``` function over temperature conversion from celcius to fahrenheit, the result should match from the one generated from this formuala |
+| 27 | test_temp_converter_f_to_c | This test is to check the ```temp_converter``` function over temperature conversion from fahrenheit to celcius, the result should match from the one generated from this formuala ```(temp - 32)/1.8```|
+| 28 | test_temp_converter_c_to_f | This test is to check the ```temp_converter``` function over temperature conversion from celcius to fahrenheit, the result should match from the one generated from this formuala ```temp*1.8 + 32 ``` |
 | 29 | test_speed_conversion_negative_speed_test | This test is check the ```speed_converter``` function over negative speed values, as there cannot be negative speed, hence the code should raise a ```ValueError```|
 | 30 | test_speed_converion_km_per_hr | This test is check the ```speed_converter``` function over km/hr conversion, as the input is in km/hr, it should return same value|
-| 31 | test_speed_converion_km_per_day |This test is check the ```speed_converter``` function over km/day conversion, as the input is in km/hr, the return value should match the result generated from the formula|
-| 32 | test_speed_converion_km_per_min | This test is check the ```speed_converter``` function over km/min conversion, as the input is in  km/hr, the return value should match the result generated from the formula|
-| 33 | test_speed_converion_km_per_second | This test is check the km/s, the return value should match the result generated from the formula|
-| 34 | test_speed_converion_km_per_micro_seconds | This test is check the ```speed_converter``` function over km/ms conversion, as the input is in km/hr, the return value should match the result generated from the formula|
-| 35 | test_speed_converion_m_per_hr | This test is check the ```speed_converter``` function over m/hr conversion, as the input is in  km/hr, the return value should match the result generated from the formula|
-| 36 | test_speed_converion_m_per_day | This test is check the ```speed_converter``` function over m/day conversion, as the input is in  km/hr, the return value should match the result generated from the formula|
-| 37 | test_speed_converion_m_per_min |This test is check the ```speed_converter``` function over m/min conversion, as the input is in km/hr, the return value should match the result generated from the formula|
-| 38 | test_speed_converion_m_per_second | This test is check the ```speed_converter``` function over m/s conversion, as the input is in  km/hr, the return value should match the result generated from the formula|
-| 39 | test_speed_converion_m_per_micro_seconds | This test is check the ```speed_converter``` function over m/ms conversion, as the input is in  km/hr, the return value should match the result generated from the formula|
-| 40 | test_speed_converion_yrd_per_hr |This test is check the ```speed_converter``` function over yrd/hr conversion, as the input is in km/hr, the return value should match the result generated from the formula|
-| 41 | test_speed_converion_yrd_per_day | This test is check the ```speed_converter``` function over yrd/day conversion, as the input is in km/hr, the return value should match the result generated from the formula|
-| 42 | test_speed_converion_yrd_per_min | This test is check the ```speed_converter``` function over yrd/min conversion, as the input is in km/hr, the return value should match the result generated from the formula|
-| 43 | test_speed_converion_yrd_per_second | This test is check the ```speed_converter``` function over yrd/s conversion, as the input is in km/hr, the return value should match the result generated from the formula|
-| 44 | test_speed_converion_yrd_per_micro_seconds | This test is check the ```speed_converter``` function over yrd/ms conversion, as the input is in km/hr, the return value should match the result generated from the formula|
-| 45 | test_speed_converion_ft_per_hr | This test is check the ```speed_converter``` function over ft/hr conversion, as the input is in km/hr, the return value should match the result generated from the formula|
-| 46 | test_speed_converion_ft_per_day | This test is check the ```speed_converter``` function over ft/day conversion, as the input is in km/hr, the return value should match the result generated from the formula|
-| 47 | test_speed_converion_ft_per_min | This test is check the ```speed_converter``` function over ft/min conversion, as the input is in km/hr, the return value should match the result generated from the formula|
-| 48 | test_speed_converion_ft_per_second | This test is check the ```speed_converter``` function over ft/s conversion, as the input is in km/hr, the return value should match the result generated from the formula|
-| 49 | test_speed_converion_ft_per_micro_seconds | This test is check the ```speed_converter``` function over ft/ms conversion, as the input is in km/hr, the return value should match the result generated from the formula|
+| 31 | test_speed_converion_km_per_day |This test is check the ```speed_converter``` function over km/day conversion, as the input is in km/hr, the return value should match the result generated from the formula ```speed/24```|
+| 32 | test_speed_converion_km_per_min | This test is check the ```speed_converter``` function over km/min conversion, as the input is in  km/hr, the return value should match the result generated from the formula ```speedx60```|
+| 33 | test_speed_converion_km_per_second | This test is check the km/s, the return value should match the result generated from the formula ```speed x 60x60```|
+| 34 | test_speed_converion_km_per_micro_seconds | This test is check the ```speed_converter``` function over km/ms conversion, as the input is in km/hr, the return value should match the result generated from the formula ```speed x 60 x60 x 1000```|
+| 35 | test_speed_converion_m_per_hr | This test is check the ```speed_converter``` function over m/hr conversion, as the input is in  km/hr, the return value should match the result generated from the formula ```speed x 1000```|
+| 36 | test_speed_converion_m_per_day | This test is check the ```speed_converter``` function over m/day conversion, as the input is in  km/hr, the return value should match the result generated from the formula ```(speed x 1000)/24```|
+| 37 | test_speed_converion_m_per_min |This test is check the ```speed_converter``` function over m/min conversion, as the input is in km/hr, the return value should match the result generated from the formula ```speed x 60000```|
+| 38 | test_speed_converion_m_per_second | This test is check the ```speed_converter``` function over m/s conversion, as the input is in  km/hr, the return value should match the result generated from the formula ```speed x 3600000``` |
+| 39 | test_speed_converion_m_per_micro_seconds | This test is check the ```speed_converter``` function over m/ms conversion, as the input is in  km/hr, the return value should match the result generated from the formula ``` speed x 3600000000```|
+| 40 | test_speed_converion_yrd_per_hr |This test is check the ```speed_converter``` function over yrd/hr conversion, as the input is in km/hr, the return value should match the result generated from the formula ``` speed x 1093.61 ```|
+| 41 | test_speed_converion_yrd_per_day | This test is check the ```speed_converter``` function over yrd/day conversion, as the input is in km/hr, the return value should match the result generated from the formula ``` (speed x 1093.61) / 24 ```|
+| 42 | test_speed_converion_yrd_per_min | This test is check the ```speed_converter``` function over yrd/min conversion, as the input is in km/hr, the return value should match the result generated from the formula ```speed x 60 x 1093.61```|
+| 43 | test_speed_converion_yrd_per_second | This test is check the ```speed_converter``` function over yrd/s conversion, as the input is in km/hr, the return value should match the result generated from the formula ``` speed x 3600 x 1093.61 ```|
+| 44 | test_speed_converion_yrd_per_micro_seconds | This test is check the ```speed_converter``` function over yrd/ms conversion, as the input is in km/hr, the return value should match the result generated from the formula ``` speed x 3600000 x 1093.61 ```|
+| 45 | test_speed_converion_ft_per_hr | This test is check the ```speed_converter``` function over ft/hr conversion, as the input is in km/hr, the return value should match the result generated from the formula ```speed x 3280.84```|
+| 46 | test_speed_converion_ft_per_day | This test is check the ```speed_converter``` function over ft/day conversion, as the input is in km/hr, the return value should match the result generated from the formula ```(speed x 3280.84)/24```|
+| 47 | test_speed_converion_ft_per_min | This test is check the ```speed_converter``` function over ft/min conversion, as the input is in km/hr, the return value should match the result generated from the formula ```speed x 60 x 3280.84```|
+| 48 | test_speed_converion_ft_per_second | This test is check the ```speed_converter``` function over ft/s conversion, as the input is in km/hr, the return value should match the result generated from the formula ``` speed x 3600 x 3280.84```|
+| 49 | test_speed_converion_ft_per_micro_seconds | This test is check the ```speed_converter``` function over ft/ms conversion, as the input is in km/hr, the return value should match the result generated from the formula ``` speed x 3600000 x 3280.84 ```|
 
 </center>
 
 
 ---
-<h3 align="center"> Made with love by KillerStrike</h3>
+<h3 align="center"> Made with ❤ & 🍻 by KillerStrike</h3>

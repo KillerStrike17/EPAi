@@ -12,6 +12,16 @@ README_CONTENT_CHECK_FOR = [
     'keyword',
     'positional',
     'tuple',
+    'time_it',
+    'myprint',
+    'squared_power_list',
+    'create_list',
+    'polygon_area',
+    'temp_converter',
+    'speed_converter',
+    'absolute zero',
+    'negative',
+    'positive'
 ]
 
 def function_name_had_cap_letter(module_name):
@@ -30,7 +40,7 @@ def test_readme_exists():
 
 def test_readme_contents():
     readme_words=[word for line in open('README.md', 'r') for word in line.split()]
-    assert len(readme_words) >= 1500, "Make your README.md file interesting! Add atleast 500 words"
+    assert len(readme_words) >= 2500, "Make your README.md file interesting! Add atleast 500 words"
 
 def test_readme_proper_description():
     READMELOOKSGOOD = True
