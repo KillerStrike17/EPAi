@@ -11,7 +11,12 @@ README_CONTENT_CHECK_FOR = [
     'lambda',
     'zip',
     'tuple',
-    'add'
+    'detox',
+    'reduce',
+    'sigmoid',
+    'Cipher',
+    'number plate',
+    'ReLU'
 ]
 
 def test_function_name_had_cap_letter():
