@@ -1,15 +1,19 @@
 import random
 from functools import wraps
 from datetime import datetime
+from functools import singledispatch
+from decimal import Decimal
+from html import escape
 
 ## 1.1 Odd Seconds Run
-def dec_factory_1(time:datetime):
+
+def dec_factory_1(time:datetime)->'Function':
     """
     This is a decorator factory which takes a parameter
     # param:
         time: This variable contains the current time
     """
-    def odd_second_runner(fn):
+    def odd_second_runner(fn: 'function'):
         """
         This is a closure function
         # Param:
@@ -33,7 +37,9 @@ def dec_factory_1(time:datetime):
     return odd_second_runner
 
 time = datetime.utcnow()
+
 @dec_factory_1(time)
+# Defining Decorator
 def add(a: int,b: int) -> int:
     """
     This function performs simple addition
@@ -47,7 +53,11 @@ def add(a: int,b: int) -> int:
 
 ## 1.2 logger
 
-def info(obj):
+def info(obj)->list:
+    """
+    This function takes in object as an input, information is extracted
+    from this class object and stored in list, the list is returned
+    """
     results = []
     results.append(f'Class: {obj.__class__.__name__}')
     results.append(f'docs: {obj.__doc__}')
@@ -55,7 +65,10 @@ def info(obj):
         results.append(f'{k}: {v}')
     return results
 
-def debug_info(cls):
+def debug_info(cls:'class'):
+    """
+    This function takes in class and calls info function
+    """
     cls.debug = info
     return cls
 
@@ -81,7 +94,12 @@ ipl = IPL(1,'MI','CSK','Ambati Rayudu','CSK')
 
 ## 1.3 Authenticate
 
-def authenticate(user_password):
+def authenticate(user_password:str):
+    """
+    This function takes in user password and checks with the one 
+    stored in the database and if it matches it executes the function 
+    else raises error
+    """
     def auth(fn):
         if user_password ==  'explode':
             @wraps(fn)
@@ -95,7 +113,11 @@ def authenticate(user_password):
 
 ## 1.4 Timed
 
-def dec_factory_2(reps):
+def dec_factory_2(reps:int):
+    """
+    This function takes in integer as an input and runs the function 
+    reps number of time
+    """
     def timed(fn):
         from time import perf_counter
 
@@ -117,28 +139,74 @@ def dec_factory_2(reps):
 def mul(a,b):
     return a*b
 
-print(mul(10,20))
+# print(mul(10,20))
 
 ## Previlege access
 
-# class user:
-#     def __init__(self,name,access):
-#         self.name = name
-        
-#         self.access = access
+def access_level(level:int):
+    """
+    This function takes in integer which defines the access level
+    and then checks if the function belongs to that level, if it does
+    then runs it else raises an error
+    """
+    levels = {1:('high','mid','low','no'),2:('mid','low','no'),3:('low','no'),4:('no')}
+    def access_func(fn):
+        func_list = levels.get(level)
+        if fn.__name__ in func_list:
+            @wraps(fn)
+            def inner(*args,**kwargs):
+                return fn(*args,**kwargs)
+            return inner
 
-# class database:
-#     def __init__(self,name, phone, email, age):
-#         self.name = 'hero'
-#         self.phone = "9999999999"
-#         self.email = "hero@zero.com"
-#         self.age = 20
-#     def __call__(self,fn):
-#         def inner(*args)
+        else:
+            raise ValueError("Pehle Clearance Lao")
+    return access_func
 
-# userA = user("A","Admin")
-# userB = user("B","Boss")
-# userC = user("C","Employee")
-# userD = user("D","Customer")
+@singledispatch
+def htmlize(input: 'input argument') -> str :
+    '''
+    function to htmlize the input based on the type of input.
+    this is a default initializer.
+    '''
+    return escape(str(input))
 
+@htmlize.register(int)
+def html_int(input: int) -> str:
+    '''
+    converts int in html formats
+    '''
+    return f'{input}(<i>{str(hex(input))}</i>)'
 
+@htmlize.register(Decimal)
+@htmlize.register(float)
+def html_real(input: float) -> str:
+    '''
+    converts reals to html function
+    '''
+    return f'{round(input, 2)}'
+
+@htmlize.register(str)
+def html_str(input: str) -> str:
+    '''
+    fconvert string to html format
+    '''
+    return escape(input).replace('\n', '<br/>\n')
+
+@htmlize.register(tuple)
+@htmlize.register(list)
+@htmlize.register(set)
+@htmlize.register(frozenset)
+def html_sequence(input) ->str:
+    '''
+    converts a sequence in html format
+    '''
+    items = (f'<li>{escape(str(item))}</li>' for item in input)
+    return '<ul>\n' + '\n'.join(items) + '\n</ul>'
+
+@htmlize.register(dict)
+def html_dict(input: dict) -> str:
+    '''
+    converts dictionary in html format
+    '''
+    items = (f'<li>{k}={v}</li>' for k, v in input.items())
+    return '<ul>\n' + '\n'.join(items) + '\n</ul>'

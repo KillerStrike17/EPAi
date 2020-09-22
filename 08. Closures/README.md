@@ -1,4 +1,4 @@
-<h1 align="center">First Class Functions Part 2</h1>
+<h1 align="center">Closures</h1>
 
 <h2 align="center"> Assignment Question </h2>
 
@@ -40,3 +40,4 @@ This task is and upgraded version of task 4, The only difference is that instead
 There are test case for to check the working of each task function. There are some general test cases of checking documentation of the project and the python files,There are testcases to check to whether they are acutally closures or not.
 
 ---
+<h3 align = "center"> Made with ❤ & 🍻 by KillerStrike</h3>
