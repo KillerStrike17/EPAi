@@ -4,6 +4,8 @@ from calculator import derivatives as d
 import os
 import inspect
 import re
+import random
+import math
 
 README_CONTENT_CHECK_FOR = [
 ]
@@ -63,9 +65,24 @@ def test_function_has_docstring():
         print(_,function)
         assert (function.__doc__ is not {}), "Doc Strings are missing"
 
-# def test_function_has_annotations():
-#     functions = inspect.getmembers(c, inspect.isfunction)
-#     for function in functions:
-#         assert (function.__annotations__ is not {}), "Annotations are missing"
+def test_functions():
+    value = random.randint(-100,100)
+    assert round(c.sin(value))== round(math.sin(value)),"Sin function is not working, you studied this in 10.."
+    assert round(c.cos(value)) == round(math.cos(value)),"Cos function is not working, you studied this in 10.."
+    assert round(c.tan(value)) == round(math.tan(value)),"Tan function is not working, you studied this in 10.."
+    assert round(c.tanh(value)) == round(math.tanh(value)),"Tanh function is not working, you studied this in 10.."
+    assert round(c.sigmoid(value)) == round((1 / (1 + math.exp(-value)))),"Sigmoid function is not working, this is the basic of DNN.."
+    assert round(c.relu(value)) == round(max(0,value)),"Relu function is not working, this is the basic of DNN,,"
+    assert round(c.log(value)) == round(math.log(value)),"Log function is not working, you studied this in 10.."
+    assert round(c.e(value))== round(math.exp(value)),"Exp function is not working, you studied this in 10.."
 
-# test_function_has_annotations()
+def test_functions_derivatives():
+    value = random.randint(-100,100)
+    assert round(d.sin_d(value)) == round(math.cos(value)),"Having issues is calculating sin derivative?"
+    assert round(d.cos_d(value)) == round(-math.sin(value)),"Having issues is calculating cos derivative?"
+    assert round(d.tan_d(value)) == round(1/(math.cos(value)**2)),"Having issues is calculating tan derivative?"
+    assert round(d.tanh_d(value)) == round(1-(math.tanh(value)**2)),"Having issues is calculating tan derivative?"
+    assert round(d.sigmoid_d(value)) ==round( ((1 / (1 + math.exp(-value)))*(1-(1 / (1 + math.exp(-value)))))),"Having issues is calculating Sigmoid derivative?"
+    assert round(d.relu_d(value)) == round(1 if value > 0 else 0),"Having issues is calculating relu derivative?"
+    assert round(d.log_d(value)) == round(1/value),"Having issues is calculating log derivative?"
+    assert round(d.e_d(value)) == round(math.exp(value)),"Having issues is calculating exp derivative?"

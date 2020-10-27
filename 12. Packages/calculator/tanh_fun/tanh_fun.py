@@ -7,7 +7,7 @@ def tanh(x:int)->float:
     This function takes in input as integers and returns the
     computed tanh value
     """
-    return 1 / (1 + math.exp(-x))
+    return math.tanh(x)
 
 @f_string_print
 def tanh_d(x:int)->float:
