@@ -2,8 +2,6 @@
 
 <h2 align="center"> Assignment Question </h2>
 
----
-
 1. Build a calculator package that has separate module for:
    1. sin, cos, tan, tanh, softMax, sigmoid, relu log and exp
    2. The modules shall include their derivatives as well
@@ -13,8 +11,6 @@
    6. Write simple test cases to check the outputs of each operator and their derivative
 
 <h2 align="center"> Assignment Solution </h2>
-
----
 
 ### Approach
 
