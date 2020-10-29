@@ -32,8 +32,9 @@ We have been given with a Rectangle Class.
 
 **Task 3:** We have to raise an error on negative valueson input, so to do that we use `property` decorator. 
 
-**Task 4:**
+**Task 4:** Here we have to raise error if any one checks for less than condition, so to do that we define a function `__lt__` and raise a not implemented error.
 
+Then test cases are defined over these tasks and therefore the code must pass all these test cases.
 
 ---
 <h3 align = "center"> Made with ❤ & 🍻 by KillerStrike</h3>
