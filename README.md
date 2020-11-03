@@ -65,6 +65,7 @@ It is an Awesome website, please go give a check..!!
 
 13. [Sequences]()
 
+    In this Assignment I learn about sequences and how to make custom sequences. Here I make a custom sequence to get area by perimeter ratio and then I get the max out of it.
 
 ---
 <h3 align = "center"> Made with ❤ & 🍻 by KillerStrike</h3>
