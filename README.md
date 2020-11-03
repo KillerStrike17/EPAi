@@ -29,8 +29,7 @@ It is an Awesome website, please go give a check..!!
 
 4. [Numeric Types II]()
    
-   In this Assignment we need to implement Qualean class. In this class we define all its __ functions like and, or, repr, str, add, eq, float, ge, gt, invertsign, le, lt, mul, sqrt, and bool. Then the class is being tested for all these functions..
-
+   In this Assignment we need to implement Qualean class. In this class we define all its __ functions like and, or, repr, str, add, eq, float, ge, gt, invertsign, le, lt, mul, sqrt, and bool. Then the class is being tested for all these functions.
 
 5. [Funcational Parameters]()
    
@@ -44,7 +43,6 @@ It is an Awesome website, please go give a check..!!
    
     In this session, I explore list comprehensions and try to replace lambda and filter functions with it. Here i also explored reduce function. In the assignment I developed code to find the next fibonacci number, then i also implemented and test some functions to learn list comprehension and reduce funcationaities.
 
-
 8. [Closure]()
    
     Here I learned about Closures, this is basically nested functions. I created closures to do a function count and store in a global variable and individual dictionary variable for each function. Then Closure to detect the presence of doc string, and to see the next generated fibonacci number. 
@@ -52,7 +50,6 @@ It is an Awesome website, please go give a check..!!
 9. [Decorators]()
     
     In this Assignment I understood decorators, Now I understand that @names in fast.ai . Here in this assignment I created decorators to time the code, to authneticate a function, to log code, to run on odd times and to provide access right to variables based on the user type.
-
 
 10. [Tuples and Named Tuples]()
     
